@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Creato | 3D Card</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="top">
+      <div class="perspective">
+        <div class="card">
+          <div class="thumb"></div>
+          <h2>Louis <br />Armstrong</h2>
+          <span
+            >Music Is Life <br />
+            Itself ;)</span
+          >
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      var o = $(".card");
+      $(".top").mouseover(function (t) {
+        var w = -($(window).innerWidth() / 2 - t.pageX) / 30,
+          h = -($(window).innerHeight() / 2 - t.pageY) / 10;
+
+        o.attr(
+          "style",
+          "transform: rotateY(" + w + "deg) rotateX(" + h + "deg);"
+        );
+      });
+    </script>
+  </body>
+</html>
